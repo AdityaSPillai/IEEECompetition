@@ -56,6 +56,8 @@
 /* Hover state for the button */
 .animated-button:hover {
   background: transparent;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: var(--primary);
   box-shadow: 0 0 25px var(--ctaboxshadow);
 }
