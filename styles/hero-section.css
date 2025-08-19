@@ -184,7 +184,7 @@
 .hero-stat-card::before {
   content: '';
   position: absolute;
-  inset: 0;
+  /* inset: 0; */
   left: -5px;
   margin: auto;
   width: calc(100% + 10px);
