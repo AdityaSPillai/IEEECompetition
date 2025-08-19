@@ -1,0 +1,91 @@
+.modern-button-wrapper {
+  display: inline-block;
+}
+
+.modern-button-wrapper .modern-animated-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 36px;
+  border: 4px solid;
+  border-color: transparent;
+  font-size: 16px;
+  background-color: inherit;
+  border-radius: 12px; /* Corrected: Changed from 100px to 12px */
+  font-weight: 600;
+  color: var(--primary); /* Uses theme color */
+  box-shadow: 0 0 0 2px var(--primary); /* Uses theme color */
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modern-button-wrapper .modern-animated-button svg {
+  position: absolute;
+  width: 24px;
+  fill: var(--primary); /* Uses theme color */
+  z-index: 9;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modern-button-wrapper .modern-animated-button .arr-1 {
+  right: 16px;
+}
+
+.modern-button-wrapper .modern-animated-button .arr-2 {
+  left: -25%;
+}
+
+.modern-button-wrapper .modern-animated-button .circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary); /* Uses theme color */
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modern-button-wrapper .modern-animated-button .text {
+  position: relative;
+  z-index: 1;
+  transform: translateX(-12px);
+  transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modern-button-wrapper .modern-animated-button:hover {
+  box-shadow: 0 0 0 12px transparent;
+  color: var(--primary-foreground); /* Uses theme color */
+  /* border-radius is already 12px, no change needed here */
+}
+
+.modern-button-wrapper .modern-animated-button:hover .arr-1 {
+  right: -25%;
+}
+
+.modern-button-wrapper .modern-animated-button:hover .arr-2 {
+  left: 16px;
+}
+
+.modern-button-wrapper .modern-animated-button:hover .text {
+  transform: translateX(12px);
+}
+
+.modern-button-wrapper .modern-animated-button:hover svg {
+  fill: var(--primary-foreground); /* Uses theme color */
+}
+
+.modern-button-wrapper .modern-animated-button:active {
+  scale: 0.95;
+  box-shadow: 0 0 0 4px var(--primary); /* Uses theme color */
+}
+
+.modern-button-wrapper .modern-animated-button:hover .circle {
+  width: 220px;
+  height: 220px;
+  opacity: 1;
+}

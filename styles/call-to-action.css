@@ -1,0 +1,152 @@
+.cta-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: transparent;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.cta-content {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.cta-content > * + * {
+  margin-top: 2rem;
+}
+
+.cta-header > * + * {
+  margin-top: 1rem;
+}
+.cta-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+}
+.cta-subtitle {
+  font-size: 1.125rem;
+  color: var(--foreground);
+  max-width: 42rem;
+  margin: 0 auto;
+  line-height: 1.625;
+}
+
+/* Features Grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2.5rem; /* Increased gap for glow effect */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* --- NEW FEATURE CARD STYLES START HERE --- */
+
+.feature-card {
+  position: relative;
+  background-color: #151515;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  border: none;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -5px;
+  margin: auto;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  border-radius: 10px;
+  background: linear-gradient(-45deg, var(--primary) 0%, var(--accent) 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feature-card::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, var(--primary) 0%, var(--accent) 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.feature-card:hover::after {
+  filter: blur(30px);
+}
+
+.feature-card:hover::before {
+  transform: rotate(-90deg) scaleX(0.75) scaleY(1.38);
+}
+
+.feature-icon {
+  height: 2rem;
+  width: 2rem;
+  color: white; /* Changed to white */
+  margin: 0 auto 0.75rem auto;
+}
+
+.feature-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: white; /* Changed to white */
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  color: #cccccc; /* Changed to light gray */
+  font-size: 0.875rem;
+}
+
+/* --- NEW FEATURE CARD STYLES END HERE --- */
+
+
+/* Buttons Container */
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Styles */
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta-title {
+    font-size: 2.25rem;
+  }
+  .cta-subtitle {
+    font-size: 1.25rem;
+  }
+  .features-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .cta-title {
+    font-size: 3rem;
+  }
+}

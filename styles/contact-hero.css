@@ -1,0 +1,94 @@
+/* Note: Assumes a global .container class and CSS variables are defined elsewhere */
+
+.contact-hero-loading {
+  height: 24rem;
+}
+
+.contact-hero {
+  position: relative;
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.contact-hero__container {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
+
+.contact-hero__content {
+  max-width: 56rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-hero__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  line-height: 1.1;
+}
+
+.contact-hero__subtitle {
+  font-size: 1.25rem;
+  color: var(--text-black1);
+  line-height: 1.6;
+}
+
+.contact-hero__stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.stat-card {
+  background-color: var(--border-bg);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.stat-card__icon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--foreground);
+  margin: 0 auto 0.5rem;
+}
+
+.stat-card__label {
+  color: var(--text-black2);
+  font-size: 0.875rem;
+}
+
+/* Responsive Media Queries */
+@media (min-width: 768px) {
+  .contact-hero__title {
+    font-size: 3rem;
+  }
+  .contact-hero__subtitle {
+    font-size: 1.5rem;
+  }
+  .contact-hero__stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-hero__title {
+    font-size: 3.75rem;
+  }
+  .contact-hero__stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

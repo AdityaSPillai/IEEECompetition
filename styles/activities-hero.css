@@ -1,0 +1,48 @@
+/* Activities hero styles */
+.activities-hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  background: var(--gradient-accent);
+  color: white;
+}
+
+.activities-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.activities-hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.activities-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .activities-hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.activities-hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .activities-hero-subtitle {
+    font-size: 1.5rem;
+  }
+}

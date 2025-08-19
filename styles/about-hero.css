@@ -1,0 +1,84 @@
+/* About hero styles */
+.about-hero-loading {
+  height: 24rem;
+}
+
+.about-hero {
+  position: relative;
+  padding: 8rem 0;
+  background: transparent;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.about-hero-container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.about-hero-content {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  .about-hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero-title {
+    font-size: 3.75rem;
+  }
+}
+
+.about-hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-black1);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .about-hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
+.about-hero-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--text-black2);
+}
+
+.about-hero-info-item {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.about-hero-info-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--text-black3);
+  border-radius: 50%;
+}

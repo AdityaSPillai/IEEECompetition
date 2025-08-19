@@ -1,0 +1,10 @@
+/* Activities page styles */
+.activities-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.activities-main {
+  display: flex;
+  flex-direction: column;
+}

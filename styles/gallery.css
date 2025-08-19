@@ -1,0 +1,10 @@
+/* Gallery page styles */
+.gallery-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.gallery-main {
+  display: flex;
+  flex-direction: column;
+}

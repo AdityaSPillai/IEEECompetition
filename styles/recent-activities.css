@@ -1,0 +1,242 @@
+.recent-activities-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: transparent;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Common Section and Typography */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+.section-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Layout */
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* --- CARD STYLES UPDATED HERE --- */
+
+/* Main card container */
+.activity-card {
+  background-color: transparent;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* Makes the card square */
+  perspective: 1000px; /* For the 3D effect */
+  border: none;
+}
+
+.activity-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Flip the card on hover */
+.activity-card:hover .activity-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and back face styling */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+/* Front face styling */
+.card-front {
+  background-color: var(--background);
+  color: var(--foreground);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.activity-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  margin: 1rem 0;
+}
+
+.activity-description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+.ctaviewall
+{
+  display:flex;
+  justify-content: center;
+}
+
+.category-badge {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Back face styling */
+.card-back {
+  transform: rotateY(180deg);
+  color: white;
+  --mouse-x: 50%; /* Default mouse position */
+  --mouse-y: 50%; /* Default mouse position */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Apply blur to the main background image */
+.card-back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  z-index: 1;
+}
+
+/* Pseudo-element for the unblurred spotlight */
+.card-back::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: inherit;
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  clip-path: circle(150px at var(--mouse-x) var(--mouse-y)); /* Increased radius */
+}
+
+.card-back-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 3;
+}
+
+.card-back-content {
+  position: relative;
+  z-index: 4; /* Must be on top of the overlay and spotlight */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Align text to the left */
+  padding: 1.5rem;
+}
+
+.activity-meta {
+  text-align: left;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.meta-icon {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-right: 0.75rem;
+}
+
+/* --- CARD STYLES END HERE --- */
+
+/* Button Styles */
+.view-all-container {
+  text-align: center;
+  margin-top: 3rem;
+}
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  border-radius: 0.375rem;
+  text-decoration: none;
+}
+.view-all-button > * + * {
+  margin-left: 0.5rem;
+}
+.button-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  transition: transform 300ms;
+}
+.view-all-button:hover .button-icon {
+  transform: translateX(0.25rem);
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+  .activities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .activities-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

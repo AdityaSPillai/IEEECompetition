@@ -1,0 +1,149 @@
+.faculty-contact {
+  padding: 5rem 0;
+  background-color: transparent;
+}
+
+.faculty-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 56rem;
+  margin: 0 auto;
+}
+
+.faculty-card {
+  transition: all 0.5s ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  padding:1rem;
+}
+
+.faculty-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.faculty-card__header {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.faculty-card__image-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.faculty-card__image {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 4px solid rgba(var(--primary-rgb), 0.2);
+  transition: transform 0.3s ease;
+}
+
+.faculty-card:hover .faculty-card__image {
+  transform: scale(1.1);
+}
+
+.faculty-card__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+}
+
+.faculty-card__position {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.faculty-card__department {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.faculty-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faculty-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.detail-item__icon {
+  height: 1rem;
+  width: 1rem;
+  color: var(--primary);
+}
+
+.detail-item__link {
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.detail-item__link:hover {
+  color: var(--primary);
+}
+
+.help-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.help-card {
+  max-width: 42rem;
+  margin: 0 auto;
+  background: rgba(var(--gradient-accent-rgb), 0.2);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+}
+
+.help-card__content {
+  padding: 2rem;
+}
+
+.help-card__icon {
+  height: 3rem;
+  width: 3rem;
+  color: var(--primary);
+  margin: 0 auto 1rem;
+}
+
+.help-card__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.help-card__text {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.help-card__subtext {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+@media (min-width: 768px) {
+  .faculty-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

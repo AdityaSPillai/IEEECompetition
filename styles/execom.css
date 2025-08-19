@@ -1,0 +1,10 @@
+/* Execom page styles */
+.execom-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.execom-main {
+  display: flex;
+  flex-direction: column;
+}

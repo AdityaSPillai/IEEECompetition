@@ -1,0 +1,10 @@
+/* Join page styles */
+.join-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.join-main {
+  display: flex;
+  flex-direction: column;
+}

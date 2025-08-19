@@ -1,0 +1,268 @@
+/* Note: Assumes a global .container, .section-header, etc. and CSS variables are defined */
+
+.image-gallery {
+  padding-top: 5rem; /* 80px */
+  padding-bottom: 5rem; /* 80px */
+  background-color: transparent;
+}
+
+.filters-container {
+  margin-bottom: 3rem; /* 48px */
+}
+
+.filters-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+  margin-bottom: 1.5rem; /* 24px */
+}
+
+.filters-header__icon {
+  height: 1.25rem; /* 20px */
+  width: 1.25rem; /* 20px */
+  color: var(--muted-foreground);
+}
+
+.filters-header__title {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* 8px */
+  justify-content: center;
+}
+
+.filter-button {
+  padding: 0.4rem 0.8rem;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.filter-button:hover {
+  transform: scale(1.1);
+}
+
+.filter-button.active {
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem; /* 24px */
+}
+
+.ig-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem; /* 8px */
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.ig-card:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.ig-card__image {
+  width: 100%;
+  height: 16rem; /* 256px */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ig-card:hover .ig-card__image {
+  transform: scale(1.1);
+}
+
+.ig-card__overlay {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-card:hover .ig-card__overlay {
+  opacity: 1;
+}
+
+.ig-card__info {
+  position: absolute;
+  bottom: 1rem; /* 16px */
+  left: 1rem; /* 16px */
+  right: 1rem; /* 16px */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ig-card:hover .ig-card__info {
+  opacity: 1;
+}
+
+.ig-card__title {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.ig-card__date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+}
+
+.no-results {
+  text-align: center;
+  padding-top: 3rem; /* 48px */
+  padding-bottom: 3rem; /* 48px */
+}
+
+.no-results__text {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  color: var(--muted-foreground);
+}
+
+.no-results__button {
+  margin-top: 1rem; /* 16px */
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* 16px */
+}
+
+.lightbox__content {
+  position: relative;
+  max-width: 80rem; /* 1280px */
+  max-height: 100%;
+}
+
+.lightbox__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.lightbox__close-btn,
+.lightbox__nav-btn {
+  position: absolute;
+  padding: 0.5rem; /* 8px */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.lightbox__close-btn:hover,
+.lightbox__nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.lightbox__close-btn {
+  top: 1rem; /* 16px */
+  right: 1rem; /* 16px */
+}
+
+.lightbox__nav-btn {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox__nav-btn--prev {
+  left: 1rem; /* 16px */
+}
+
+.lightbox__nav-btn--next {
+  right: 1rem; /* 16px */
+}
+
+.lightbox__icon {
+  height: 1.5rem; /* 24px */
+  width: 1.5rem; /* 24px */
+}
+
+.lightbox__info {
+  position: absolute;
+  bottom: 1rem; /* 16px */
+  left: 1rem; /* 16px */
+  right: 1rem; /* 16px */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 1rem; /* 16px */
+  border-radius: 0.5rem; /* 8px */
+}
+
+.lightbox__info-title {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 600;
+  margin-bottom: 0.25rem; /* 4px */
+}
+
+.lightbox__info-alt {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.lightbox__info-meta {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 0.25rem; /* 4px */
+}
+
+.lightbox__counter {
+  position: absolute;
+  top: 1rem; /* 16px */
+  left: 1rem; /* 16px */
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem; /* 4px 12px */
+  border-radius: 9999px;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+/* Responsive Media Queries */
+@media (min-width: 640px) {
+  .image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .section-title {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

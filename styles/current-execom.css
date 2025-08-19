@@ -1,0 +1,173 @@
+/* Current execom styles */
+.current-execom {
+  padding: 5rem 0;
+  background-color: transparent;
+}
+
+.current-execom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.current-execom-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.current-execom-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .current-execom-title {
+    font-size: 2.25rem;
+  }
+}
+
+.current-execom-subtitle {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.current-execom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .current-execom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .current-execom-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .current-execom-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.execom-member-card {
+  transition: all 0.5s ease;
+  transform: translateY(0);
+  overflow: hidden;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.execom-member-card:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+.execom-member-image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.execom-member-image {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.execom-member-card:hover .execom-member-image {
+  transform: scale(1.1);
+}
+
+.execom-member-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.execom-member-card:hover .execom-member-overlay {
+  opacity: 1;
+}
+
+.execom-member-social {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.execom-member-card:hover .execom-member-social {
+  opacity: 1;
+}
+
+.execom-social-link {
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.execom-social-link:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.execom-social-icon {
+  height: 1rem;
+  width: 1rem;
+  color: white;
+}
+
+.execom-member-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.execom-member-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin: 0;
+}
+
+.execom-member-position {
+  color: var(--primary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.execom-member-details {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+}
+
+.execom-member-details p {
+  margin: 0;
+}
+
+.execom-member-bio {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.6;
+  margin: 0;
+}

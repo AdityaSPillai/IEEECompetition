@@ -1,0 +1,140 @@
+.achievements-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: transparent;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Common Section and Typography */
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+.section-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+/* Grid Layout */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 2.5rem; /* Increased gap for glow effect */
+}
+
+/* --- NEW CARD STYLES START HERE --- */
+
+/* This is the outer gradient border */
+.achievement-card {
+  background-image: linear-gradient(163deg, var(--primary) 0%, var(--accent) 100%);
+  border-radius: 22px;
+  transition: all .3s;
+  border: none; /* Remove previous border styles */
+}
+
+/* On hover, the outer card gets a glow effect */
+.achievement-card:hover {
+  box-shadow: 0px 0px 30px 1px var(--accent);
+}
+
+/* This is the inner card that holds the content */
+.card-content {
+  background-color: var(--background);
+  border-radius: 20px; /* Slightly smaller radius than the parent */
+  transition: all .2s;
+  padding: 1.5rem;
+  text-align: center;
+  height: 100%;
+}
+
+/* On hover, the inner card scales down to reveal the border */
+.achievement-card:hover .card-content {
+  transform: scale(0.98);
+}
+
+/* --- NEW CARD STYLES END HERE --- */
+
+
+.card-content > * + * {
+  margin-top: 1rem;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.card-header > * + * {
+  margin-top: 0.75rem;
+}
+
+.icon-wrapper {
+  padding: 0.75rem;
+  border-radius: 9999px;
+  background-color: var(--border-bg); /* Using theme variable */
+  transition: background-color 300ms;
+}
+.achievement-card:hover .icon-wrapper {
+  background-color: var(--border-color); /* Using theme variable */
+}
+
+.achievement-icon {
+  height: 2rem;
+  width: 2rem;
+  transition: transform 300ms;
+}
+.achievement-card:hover .achievement-icon {
+  transform: scale(1.1);
+}
+
+.year-badge {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary);
+  background-color: var(--border-bg); /* Using theme variable */
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.achievement-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin-bottom: 0.75rem;
+}
+
+.achievement-description {
+  font-size: 0.875rem;
+  color: var(--muted-foreground);
+  line-height: 1.625;
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem;
+  }
+  .achievements-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

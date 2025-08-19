@@ -1,0 +1,10 @@
+/* Home page styles */
+.home-page {
+  position: relative;
+  min-height: 100vh;
+}
+
+.home-main {
+  display: flex;
+  flex-direction: column;
+}

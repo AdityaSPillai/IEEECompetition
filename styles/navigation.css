@@ -1,0 +1,195 @@
+/* Navigation styles */
+.navigation {
+  position: fixed; /* Changed from sticky to fixed */
+  top: 0;
+  left: 0; /* Added for full width */
+  z-index: 50;
+  width: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  /* Initially transparent */
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Styles for the navigation bar when the user has scrolled */
+.navigation.scrolled {
+  /* border-bottom: 1px solid rgba(var(--border), 0.4); */
+  background-color: rgba(var(--background), 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--foreground);
+}
+
+/* Fallback for browsers that support backdrop-filter */
+@supports (backdrop-filter: blur(10px)) {
+  .navigation.scrolled {
+    background-color: rgba(var(--background), 0.6);
+  }
+}
+
+
+.navigation-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navigation-content {
+  display: flex;
+  height: 4rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navigation-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.navigation-logo {
+  height: 3rem;
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+.navigation-title {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .navigation-title {
+    display: block;
+  }
+}
+
+.navigation-main-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: var(--foreground);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.navigation-subtitle {
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin: 0;
+  line-height: 1;
+}
+
+.navigation-desktop {
+  display: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 768px) {
+  .navigation-desktop {
+    display: flex;
+  }
+}
+
+.navigation-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.navigation-link:hover {
+  background-color: rgba(var(--accent), 0.2);
+  color: var(--accent-foreground);
+  box-shadow: 0 0 0 1.5px var(--accent);
+}
+
+.navigation-link-active {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
+
+.navigation-mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .navigation-mobile-controls {
+    display: none;
+  }
+}
+
+.navigation-mobile-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.navigation-mobile-button:hover {
+  background-color: rgba(var(--accent), 0.1);
+}
+
+.navigation-icon {
+  height: 1.25rem;
+  width: 1.25rem;
+  color: var(--foreground);
+}
+
+.navigation-mobile-menu {
+  display: block;
+  border-top: 1px solid rgba(var(--border), 0.4);
+  background-color: rgba(var(--background), 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@media (min-width: 768px) {
+  .navigation-mobile-menu {
+    display: none;
+  }
+}
+
+.navigation-mobile-links {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navigation-mobile-link {
+  display: block;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.navigation-mobile-link:hover {
+  background-color: rgba(var(--accent), 0.2);
+  color: var(--accent-foreground);
+}
+
+.navigation-mobile-link-active {
+  background-color: var(--accent);
+  color: var(--accent-foreground);
+}
