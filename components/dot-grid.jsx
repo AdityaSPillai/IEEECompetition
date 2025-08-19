@@ -219,6 +219,9 @@ const DotGrid = ({
     };
 
     const onClick = (e) => {
+      if (!canvasRef.current) {
+        return; // Exit the function if the canvas doesn't exist
+      }
       const rect = canvasRef.current.getBoundingClientRect();
       const cx = e.clientX - rect.left;
       const cy = e.clientY - rect.top;
