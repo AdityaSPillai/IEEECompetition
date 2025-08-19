@@ -7,7 +7,6 @@
   z-index: -1;
 }
 
-/* --- NEW: Styles for the dedicated background element --- */
 .dot-grid__background {
   position: absolute;
   inset: 0;
@@ -32,9 +31,13 @@
   pointer-events: none;
 }
 
-/* --- UPDATED: Hide only the canvas wrapper on mobile --- */
 @media (max-width: 1023px) {
   .dot-grid__wrap {
     display: none;
   }
+}
+
+/* --- UPDATED: Prevent horizontal scroll/zoom on mobile for the about page --- */
+.about-page {
+  overflow-x: hidden;
 }
