@@ -48,9 +48,9 @@ export function PreviousExecom() {
     <section className="current-execom">
       <div className="current-execom-container">
         <div className="current-execom-header">
-          <h2 className="current-execom-title">Current Executive Committee</h2>
+          <h2 className="current-execom-title">Previous Executive Committee</h2>
           <p className="current-execom-subtitle">
-            Academic Year 2025-26 • Meet the dedicated team leading our joint chapter
+            Academic Year 2024-25 • Meet the dedicated team which lead our joint chapter to Success
           </p>
         </div>
 

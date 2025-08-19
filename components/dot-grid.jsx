@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useEffect, useCallback, useMemo } from "react";
+import { useRef, useEffect, useCallback, useMemo, useState } from "react";
 import { gsap } from "gsap";
 import { InertiaPlugin } from "gsap/InertiaPlugin";
 import "../styles/dot-grid.css";
@@ -44,6 +44,8 @@ const DotGrid = ({
   className = "",
   style,
 }) => {
+  const [isDesktop, setIsDesktop] = useState(true);
+  
   const wrapperRef = useRef(null);
   const canvasRef = useRef(null);
   const dotsRef = useRef([]);
@@ -57,6 +59,16 @@ const DotGrid = ({
     lastX: 0,
     lastY: 0,
   });
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
 
   const baseRgb = useMemo(() => hexToRgb(baseColor), [baseColor]);
   const activeRgb = useMemo(() => hexToRgb(activeColor), [activeColor]);
@@ -108,7 +120,7 @@ const DotGrid = ({
   }, [dotSize, gap]);
 
   useEffect(() => {
-    if (!circlePath) return;
+    if (!circlePath || !isDesktop) return;
 
     let rafId;
     const proxSq = proximity * proximity;
@@ -151,9 +163,10 @@ const DotGrid = ({
 
     draw();
     return () => cancelAnimationFrame(rafId);
-  }, [proximity, baseColor, activeRgb, baseRgb, circlePath]);
+  }, [proximity, baseColor, activeRgb, baseRgb, circlePath, isDesktop]);
 
   useEffect(() => {
+    if (!isDesktop) return;
     buildGrid();
     let ro = null;
     if ("ResizeObserver" in window) {
@@ -166,9 +179,10 @@ const DotGrid = ({
       if (ro) ro.disconnect();
       else window.removeEventListener("resize", buildGrid);
     };
-  }, [buildGrid]);
+  }, [buildGrid, isDesktop]);
 
   useEffect(() => {
+    if (!isDesktop) return;
     const onMove = (e) => {
       const now = performance.now();
       const pr = pointerRef.current;
@@ -219,9 +233,6 @@ const DotGrid = ({
     };
 
     const onClick = (e) => {
-      if (!canvasRef.current) {
-        return; // Exit the function if the canvas doesn't exist
-      }
       const rect = canvasRef.current.getBoundingClientRect();
       const cx = e.clientX - rect.left;
       const cy = e.clientY - rect.top;
@@ -258,6 +269,7 @@ const DotGrid = ({
       window.removeEventListener("click", onClick);
     };
   }, [
+    isDesktop,
     maxSpeed,
     speedTrigger,
     proximity,
@@ -269,9 +281,15 @@ const DotGrid = ({
 
   return (
     <section className={`dot-grid ${className}`} style={style}>
-      <div ref={wrapperRef} className="dot-grid__wrap">
-        <canvas ref={canvasRef} className="dot-grid__canvas" />
-      </div>
+      {/* --- NEW: Background element --- */}
+      <div className="dot-grid__background" />
+      
+      {/* Conditionally render the canvas only on desktop */}
+      {isDesktop && (
+        <div ref={wrapperRef} className="dot-grid__wrap">
+          <canvas ref={canvasRef} className="dot-grid__canvas" />
+        </div>
+      )}
     </section>
   );
 };
