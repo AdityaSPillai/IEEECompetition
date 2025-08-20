@@ -209,8 +209,8 @@
 .mission-vision-value-card::before {
   content: '';
   position: absolute;
-  inset: 0;
   left: -5px;
+  top:-5px;
   margin: auto;
   width: calc(100% + 10px);
   height: calc(100% + 10px);
