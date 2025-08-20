@@ -8,7 +8,7 @@ import "../../styles/execom.css"
 import "../../styles/dot-grid.css"
 
 export const metadata = {
-  title: "Executive Committee - IEEE SSCS/SPS/PHO/MTTS Joint Chapter",
+  title: "Execom | IEEE SSCS/SPS/PHO/MTTS Joint Chapter",
   description: "Meet our current and previous executive committee members who lead our joint chapter.",
 }
 

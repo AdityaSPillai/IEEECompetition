@@ -12,11 +12,11 @@ const contactDetails = [
 ]
 
 const socialLinks = [
-  { name: "Website", icon: Globe, url: "https://cek.ac.in", color: "blue" },
-  { name: "Facebook", icon: Facebook, url: "#", color: "blue" },
-  { name: "Instagram", icon: Instagram, url: "#", color: "pink" },
-  { name: "LinkedIn", icon: Linkedin, url: "#", color: "blue-dark" },
-  { name: "Twitter", icon: Twitter, url: "#", color: "blue-light" },
+  { name: "Website", icon: Globe, url: "https://ieeesbcek.org/", color: "blue" },
+  { name: "Facebook", icon: Facebook, url: "https://www.facebook.com/ieeeceksb/", color: "blue" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/ieee_sb_cek/", color: "pink" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/company/ieeesbcek/", color: "blue-dark" },
+  { name: "Twitter", icon: Twitter, url: "https://x.com/IEEE_SB_CEK", color: "blue-light" },
 ]
 
 export function ContactInfo() {

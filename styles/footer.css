@@ -3,7 +3,7 @@
   background: transparent;
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  border-top: 1px solid rgba(var(--border), 0.4);
+  border-top: 2px solid rgba(var(--foreground), 1);
 }
 
 .footer-container {
@@ -93,11 +93,13 @@
   flex-shrink: 0;
 }
 
+/* --- UPDATED STYLES --- */
 .footer-links-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem 1rem; /* row-gap column-gap */
 }
+/* --- END OF UPDATED STYLES --- */
 
 .footer-link {
   display: flex;

@@ -239,7 +239,7 @@ const activities = [
 
 const categories = ["All", "Event", "Workshop", "Seminar", "Symposium", "Competition", "Lab Visit"]
 const societies = ["All", "SSCS", "SPS", "PHO", "MTTS"]
-const years = ["All", "2024", "2023", "2022", "2025"]
+const years = ["All", "2025", "2024", "2023", "2022"]
 
 export function ActivitiesList() {
   const [selectedCategory, setSelectedCategory] = useState("All")

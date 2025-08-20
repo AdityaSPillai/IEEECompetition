@@ -1,6 +1,6 @@
 .location-map {
   padding: 5rem 0;
-  background-color: var(--background);
+  background-color: transparent;
 }
 
 .location-grid {

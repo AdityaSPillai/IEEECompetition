@@ -49,7 +49,10 @@ export function LocationMap() {
                 <div>
                   <h3 className="detail-card__title">Directions</h3>
                   <p className="detail-card__text">
-                    Located on the Kollam-Alappuzha highway, easily accessible by bus and private transport. The nearest railway station is Karunagappally (2 km).
+                    Located on the Kollam-Alappuzha highway, easily accessible by bus and private transport.
+                  </p>
+                  <p className="detail-card__text">
+                    The nearest railway station is Karunagappally (2 km).
                   </p>
                 </div>
               </CardContent>
@@ -61,8 +64,7 @@ export function LocationMap() {
                 <div>
                   <h3 className="detail-card__title">Visiting Hours</h3>
                   <div className="detail-card__text">
-                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p>Saturday: 9:00 AM - 1:00 PM</p>
+                    <p>Monday - Saturday : 9:00 AM - 4:00 PM</p>
                     <p>Sunday: Closed</p>
                   </div>
                 </div>

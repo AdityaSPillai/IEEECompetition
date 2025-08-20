@@ -96,6 +96,10 @@ export function Footer() {
                 <ExternalLink className="footer-link-icon" />
                 <span>LinkedIn</span>
               </a>
+              <a href="https://x.com/IEEE_SB_CEK" target="_blank" rel="noopener noreferrer" className="footer-link">
+                <ExternalLink className="footer-link-icon" />
+                <span>X</span>
+              </a>
               <a href="https://mtt.org/" target="_blank" rel="noopener noreferrer" className="footer-link">
                 <ExternalLink className="footer-link-icon" />
                 <span>MTTS</span>
@@ -130,7 +134,8 @@ export function Footer() {
 
         <div className="footer-bottom">
           <div className="footer-bottom-content">
-            <p className="footer-copyright">© 2024 IEEE Student Branch CEK. All rights reserved.</p>
+            <p className="footer-copyright">© 2025 IEEE Student Branch CEK. All rights reserved.</p>
+            <p className="footer-copyright">Made with ❤️</p>
             <p className="footer-credit">Designed for IEEE SB CEK Society Website Competition</p>
           </div>
         </div>

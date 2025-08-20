@@ -8,7 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import ClientOnly from '@/components/ClientOnly'; // Ensure this path is correct
 
 export const metadata: Metadata = {
-  title: 'Society Website',
+  title: 'Home | IEEE SSCS/SPS/PHO/MTTS Joint Chapter',
   description: 'Created with ❤️',
 }
 

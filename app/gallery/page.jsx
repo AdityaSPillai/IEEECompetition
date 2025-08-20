@@ -7,7 +7,7 @@ import "../../styles/dot-grid.css"
 import DotGrid from "@/components/dot-grid"
 
 export const metadata = {
-  title: "Gallery - IEEE SSCS/SPS/PHO/MTTS Joint Chapter",
+  title: "Gallery | IEEE SSCS/SPS/PHO/MTTS Joint Chapter",
   description: "Browse through our collection of event photos, workshop moments, and memorable experiences.",
 }
 
